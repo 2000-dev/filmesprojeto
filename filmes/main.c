@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Constante para o tamanho m·ximo do acervo
+// Constante para o tamanho m√°ximo do acervo
 #define TAMANHO_ACERVO 20
-#define ARQUIVO_ACERVO "acervo.dat"  // arquivo bin·rio onde o acervo ser· salvo
+#define ARQUIVO_ACERVO "acervo.dat"  // arquivo bin√°rio onde o acervo ser√° salvo
 
-// DefiniÁ„o da struct Livro
+// Defini√ß√£o da struct Livro
 struct Livro {
     int codigo;
     char titulo[50];
@@ -16,13 +16,13 @@ struct Livro {
     char editora[30];
 };
 
-// ProtÛtipos das funÁıes principais
+// Prot√≥tipos das fun√ß√µes principais
 void cadastrarLivros(struct Livro acervo[], int tamanho);
 void imprimirLivros(struct Livro acervo[], int tamanho);
 void pesquisarLivro(struct Livro acervo[], int tamanho, int codigoBusca);
 void ordenarLivros(struct Livro acervo[], int tamanho);
 
-// ProtÛtipos do DESAFIO EXTRA (arquivos)
+// Prot√≥tipos do DESAFIO EXTRA (arquivos)
 void carregarAcervo(struct Livro acervo[], int tamanho, const char *nomeArquivo);
 void salvarAcervo(struct Livro acervo[], int tamanho, const char *nomeArquivo);
 
@@ -89,10 +89,10 @@ int main() {
 }
 
 /*
- * FunÁ„o: cadastrarLivros
+ * Fun√ß√£o: cadastrarLivros
  * -----------------------
- * Percorre o vetor de livros e cadastra ate TAMANHO_ACERVO livros.
- * Cada livro tera: codigo, titulo, autor, area, ano e editora.
+ * Percorre o vetor de livros e cadastra at√© TAMANHO_ACERVO livros.
+ * Cada livro ter√°: codigo, titulo, autor, area, ano e editora.
  */
 void cadastrarLivros(struct Livro acervo[], int tamanho) {
     int i;
@@ -142,7 +142,7 @@ void cadastrarLivros(struct Livro acervo[], int tamanho) {
 }
 
 /*
- * FunÁ„o: imprimirLivros
+ * Fun√ß√£o: imprimirLivros
  * ----------------------
  * Percorre o vetor e imprime todos os livros cujo codigo seja diferente de 0.
  */
@@ -170,10 +170,10 @@ void imprimirLivros(struct Livro acervo[], int tamanho) {
 }
 
 /*
- * FunÁ„o: pesquisarLivro
+ * Fun√ß√£o: pesquisarLivro
  * ----------------------
  * Recebe o codigo que o usuario deseja buscar e
- * percorre o acervo ate encontrar ou terminar o vetor.
+ * percorre o acervo at√© encontrar ou terminar o vetor.
  */
 void pesquisarLivro(struct Livro acervo[], int tamanho, int codigoBusca) {
     int i = 0;
@@ -200,11 +200,11 @@ void pesquisarLivro(struct Livro acervo[], int tamanho, int codigoBusca) {
 }
 
 /*
- * FunÁ„o: ordenarLivros
+ * Fun√ß√£o: ordenarLivros
  * ---------------------
- * Ordena os livros por ano de publicacao usando Bubble Sort.
+ * Ordena os livros por ano de publica√ß√£o usando Bubble Sort.
  * Se dois livros tiverem o mesmo ano, usa strcmp no titulo
- * para desempatar (aplicando funcao de string).
+ * para desempatar (aplicando fun√ß√£o de string).
  */
 void ordenarLivros(struct Livro acervo[], int tamanho) {
     int i, j;
@@ -239,12 +239,12 @@ void ordenarLivros(struct Livro acervo[], int tamanho) {
 }
 
 /*
- * FunÁ„o: carregarAcervo  (DESAFIO EXTRA)
+ * Fun√ß√£o: carregarAcervo  (DESAFIO EXTRA)
  * --------------------------------------
- * LÍ o conte˙do do acervo a partir de um arquivo bin·rio.
- * Se o arquivo n„o existir, mantÈm o vetor como est· (vazio).
+ * L√™ o conte√∫do do acervo a partir de um arquivo bin√°rio.
+ * Se o arquivo n√£o existir, mant√©m o vetor como est√° (vazio).
  *
- * ObservaÁ„o: fread recebe um ponteiro para o inÌcio do vetor.
+ * Observa√ß√£o: fread recebe um ponteiro para o in√≠cio do vetor.
  */
 void carregarAcervo(struct Livro acervo[], int tamanho, const char *nomeArquivo) {
     FILE *f = fopen(nomeArquivo, "rb"); // rb = read binary
@@ -265,11 +265,11 @@ void carregarAcervo(struct Livro acervo[], int tamanho, const char *nomeArquivo)
 }
 
 /*
- * FunÁ„o: salvarAcervo  (DESAFIO EXTRA)
+ * Fun√ß√£o: salvarAcervo  (DESAFIO EXTRA)
  * -------------------------------------
- * Grava todo o vetor de livros em um arquivo bin·rio.
+ * Grava todo o vetor de livros em um arquivo bin√°rio.
  *
- * ObservaÁ„o: fwrite tambÈm usa um ponteiro para o inÌcio do vetor.
+ * Observa√ß√£o: fwrite tamb√©m usa um ponteiro para o in√≠cio do vetor.
  */
 void salvarAcervo(struct Livro acervo[], int tamanho, const char *nomeArquivo) {
     FILE *f = fopen(nomeArquivo, "wb"); // wb = write binary
