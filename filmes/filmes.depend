@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1764986925 source:c:\users\cabaçabook\desktop\filmesprojeto\filmes\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
